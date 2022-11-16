@@ -4,12 +4,10 @@ import MainMap from "./mainmap";
 import MainNav from "./mainnav";
 
 const Layout = ({ children }) => {
-
   return (
-    <div >
-      
-      <MainNav children={children}/>
-      <MainMap/>
+    <div>
+      <MainNav>{children}</MainNav>
+      <MainMap />
     </div>
   );
 };
