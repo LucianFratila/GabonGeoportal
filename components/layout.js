@@ -5,7 +5,7 @@ import MainNav from "./mainnav";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className=" h-screen">
       <MainNav>{children}</MainNav>
       <MainMap />
     </div>
