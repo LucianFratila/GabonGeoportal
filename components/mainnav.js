@@ -21,7 +21,7 @@ const MainNav = ({ children }) => {
   const [open, isOpen] = useState(true);
   const menuRef = useRef(null);
   const [width, setWidth] = useState(706); //for menu
-  const [screenWidth, setScreenWidthWidth] = useState(706); //for menu
+  const [screenWidth, setScreenWidthWidth] = useState(750); //for menu
   const [sliderPos, SetSliderPos] = useState(0);
 
   const slideLeft = () => {
