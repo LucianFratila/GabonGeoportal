@@ -1,6 +1,9 @@
 import Statistics from "../../components/(shared-components)/statistics";
+
 import ToggleCheckBox from "../../components/styled-components/toggleCheckbox";
 import InputSelectOptions from "../../components/styled-components/inputSelectOptions";
+
+import useStore from "../../components/(store)/store";
 
 const Concessions = () => {
   const layercontrols = {
@@ -41,12 +44,19 @@ const Concessions = () => {
     ],
   };
 
+
+  /////// shared state////////////
+  const concessionVisibiliy = useStore(state => state.concessionVisibiliy);
+  const changeConcessionVisibility = useStore(state => state.changeConcessionVisibility);
+
+  /////// shared state////////////
+
   return (
     <main className='p-2'>
       {/* layer name & visibility */}
       <div className=' py-5 gap-3 flex flex-row  px-4'>
         <h1 className=' text-white'>Concessions</h1>
-        <ToggleCheckBox />
+        <ToggleCheckBox toggleState={concessionVisibiliy} toggleAction={changeConcessionVisibility} name={'Concession Visibility'}  />
       </div>
       {/* filters */}
       <section className=' rounded-md p-4  bg-neutral-700'>
@@ -93,7 +103,7 @@ const Concessions = () => {
           {layercontrols.layers.map((i) => (
             <div key={i.id} className='flex py-3 gap-3'>
               <h1 className=' text-white'>{i.name}</h1>
-              <ToggleCheckBox />
+              <ToggleCheckBox  />
             </div>
           ))}
         </div>

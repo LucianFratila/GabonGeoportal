@@ -24,3 +24,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.mainnavlink {
+  white-space: nowrap;
+}
+.mainnavlink:hover {
+  border-bottom: 5px solid green;
+}

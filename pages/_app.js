@@ -1,13 +1,20 @@
 import "mapbox-gl/dist/mapbox-gl.css";
+
 import "../styles/globals.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import Layout from "../components/layout";
 
 function MyApp({ Component, pageProps }) {
+  // Create a client
+  const queryClient = new QueryClient();
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    // Provide the client to your App
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </QueryClientProvider>
   );
 }
 

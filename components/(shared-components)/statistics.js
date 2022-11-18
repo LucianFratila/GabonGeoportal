@@ -8,8 +8,8 @@ const Statistics = ({ data }) => {
   const [open, isOpen] = useState(false);
   return (
     <section
-      className={`flex flex-col p-4 mt-4 mb-4 rounded-md bg-neutral-700 ${
-        open ? " duration-300" : " h-16   duration-300"
+      className={`flex flex-col overflow-auto p-4 mt-4 mb-4 rounded-md bg-neutral-700 ${
+        open ? " h-[100%] duration-300" : " h-16   duration-300"
       } `}
     >
       <div className=' flex flex-row justify-between items-center'>
@@ -30,10 +30,11 @@ const Statistics = ({ data }) => {
       {open ? (
         <>
           <div
-            className={`flex gap-3  bg-neutral-600 rounded-md p-4 my-2 ${
+            className={`flex flex-col gap-3   bg-neutral-600 rounded-md p-4 ${
               open ? " opacity-100 duration-500" : "opacity-0 duration-500"
             }  `}
           >
+            {/* ITEM CHART */}
             <div className='w-1/2'>
               <PieChart startAngle={0} lengthAngle={360} lineWidth={30} animate={true} data={data} />
             </div>
@@ -57,13 +58,9 @@ const Statistics = ({ data }) => {
                 </span>
               ))}
             </div>
-          </div>
-          <div
-            className={`flex gap-3  bg-neutral-600 rounded-md p-4 my-2 ${
-              open ? " opacity-100 duration-500" : "opacity-0 duration-500"
-            }  `}
-          >
-            <div className='w-1/2'>
+            {/* ITEM CHART */}
+             {/* ITEM CHART */}
+             <div className='w-1/2'>
               <PieChart startAngle={0} lengthAngle={360} lineWidth={30} animate={true} data={data} />
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
@@ -86,38 +83,8 @@ const Statistics = ({ data }) => {
                 </span>
               ))}
             </div>
+            {/* ITEM CHART */}
           </div>
-          <div
-            className={`flex gap-3  bg-neutral-600 rounded-md p-4 my-2 ${
-              open ? " opacity-100 duration-500" : "opacity-0 duration-500"
-            }  `}
-          >
-            <div className='w-1/2'>
-              <PieChart startAngle={0} lengthAngle={360} lineWidth={30} animate={true} data={data} />
-            </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2'>
-              {data.map((i) => (
-                <span className='flex ' key={i.title}>
-                  <span className=' flex flex-row gap-1 justify-center items-center mx-1'>
-                    <p className=' text-xs text-maintext'>{`${i.value}%`}</p>
-                    <span
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        backgroundColor: `${i.color}`,
-                        borderRadius: "50%",
-                        display: "inline-block",
-                        padding: "5px",
-                      }}
-                    ></span>
-                    <p className=' text-xs text-maintext'>{i.title}</p>
-                  </span>
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          
         </>
       ) : (
         <></>

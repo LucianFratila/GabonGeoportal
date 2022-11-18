@@ -1,13 +1,17 @@
-import React, { useRef, useEffect, useState } from "react";
-
-import MainMap from "./mainmap";
+import React, { useRef, useEffect, useState, useMemo } from "react";
+import dynamic from 'next/dynamic';
 import MainNav from "./mainnav";
+import MainMap from "./mainmap";
+
+
+
 
 const Layout = ({ children }) => {
+
   return (
-    <div className=" h-screen">
+    <div className=" bg-slate-700">
       <MainNav>{children}</MainNav>
-      <MainMap />
+      <MainMap  />
     </div>
   );
 };
