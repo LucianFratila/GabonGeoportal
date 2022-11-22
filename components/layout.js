@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className=" bg-slate-700">
-      {/* {mainMapSearchToggle&&<GeneralModal status={mainMapSearchToggle} toggle={changeMainMapSearchToggle} close={changeMainMapSearchToggleFalse} />} */}
+      {mainMapSearchToggle&&<GeneralModal status={mainMapSearchToggle} toggle={changeMainMapSearchToggle} close={changeMainMapSearchToggleFalse} />}
       <MainNav>{children}</MainNav>
       <MainMap  />
     </div>
