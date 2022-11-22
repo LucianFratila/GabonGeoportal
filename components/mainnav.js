@@ -13,12 +13,7 @@ const MainNav = ({ children }) => {
   const [width, setWidth] = useState(706); //for menu
   const [screenWidth, setScreenWidthWidth] = useState(750); //for menu
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWidth(menuRef.current.offsetWidth);
-      setScreenWidthWidth(window.innerWidth);
-    });
-  }, [screenWidth]);
+  
 
   return (
     <>

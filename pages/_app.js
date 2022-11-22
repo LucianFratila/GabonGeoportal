@@ -1,5 +1,4 @@
 import "mapbox-gl/dist/mapbox-gl.css";
-
 import "../styles/globals.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 
